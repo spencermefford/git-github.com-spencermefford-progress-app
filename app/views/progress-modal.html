@@ -1,0 +1,41 @@
+<div class="modal-header">
+  <h3 class="modal-title">Your Progress</h3>
+</div>
+<div class="modal-body">
+  <div class="modal-inner">
+
+    <div class="row progress-indicator">
+      <div class="col-md-2 text-right col-md-offset-1">
+        <strong>Reached:</strong>
+      </div>
+      <div class="col-md-4">
+        <uib-progressbar max="progressModal.target" value="progressModal.progress" animate="true"></uib-progressbar>
+
+        <div class="progress-marker" ng-style="{'left': progressModal.markerPosition}">
+          <i class="fa fa-chevron-up"></i>
+          <span>{{progressModal.progress | currency:'$':0}}</span>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="target-wrapper">
+          Target
+          <br>
+          {{progressModal.target | currency:'$':0}}
+        </div>
+      </div>
+      <div class="col-md-3">
+      </div>
+    </div>
+
+    <div class="modal-inner-footer text-center">
+      <p ng-if="progressModal.progress < progressModal.target">
+        <i class="fa fa-info-circle"></i>
+        You need {{progressModal.target - progressModal.progress | currency:'$':0}} more to reach your target.
+      </p>
+      <p ng-if="progressModal.progress >= progressModal.target">
+        <i class="fa fa-info-circle"></i>
+        You have met your target!
+      </p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<div class="jumbotron">
+  <h1>My Account</h1>
+  <p>
+    <a class="btn btn-lg btn-success" ng-click="myAccount.open()">Progress</a>
+  </p>
+</div>
+
+<div>
+  <form>
+    <div class="form-group">
+      <label for="myTarget">Target</label>
+      <input id="myTarget" type="number" min="0" ng-model="myAccount.target">
+    </div>
+    <div class="form-group">
+      <label for="myProgress">Progress</label>
+      <input id="myProgress" type="number" min="0" ng-model="myAccount.progress">
+    </div>
+  </form>
+</div>
